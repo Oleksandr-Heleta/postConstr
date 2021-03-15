@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Post Constructor</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="wrapper">
+        <!-- Контейнер для постов -->
+        <main class="main">
+            <h2>News Feed</h2>
+            <ul id="post_lists">
+                
+            </ul>
+            
+        </main>
+        <!-- Форма для создания постов -->
+        <aside class="aside">
+            <h2>Post Constructor</h2>
+            <form class="form" id="create_post">
+                <label for="author_inp">Author</label>
+                <input type="text" id="author_inp" name="author">
+               
+                <label for="about_inp">Post text </label>
+                <textarea placeholder="Your Message" id="about_inp" name="text"></textarea>
+                <br>
+                <div class="preview">
+                    <img class="preview_img"  src="#" alt="check image URL">
+                </div>
+                <label for="img_inp">Image URL</label>
+                <span><input class="img_inp" type="text" id="img_inp" name="imageURl"><button id="loadImg" >Load Image</button></span>
+            
+                <button class="btn_send form_send" name="send">Send Post</button>
+                
+            </form>
+        </aside>
+    </div>
+    <!-- Шаблон для ПОСТОВ -->
+    <template id="renderPost">
+        <li class="post_item">
+            <div class="author_date">
+                <div class="author">
+                   
+                </div>
+                <div class="date">
+                   
+                </div>
+            </div>
+            <img class="post_img" src="" alt="it's happend">
+            <div class="post_text">
+                <span class="text"></span>
+                <button class="seeMore">See more</button>
+            </div>
+            <div class="likes_comments">
+                <button class="likes addLike">&#10084; Likes: <span class="like_span"> </span> </button>
+                <div>
+                    <span class="comments_count">Comments(  )</span>
+                    <button id="openForm">Write comment</button>
+                </div>
+            </div>
+            <form class="comment_form" id="create_comment_for${this.id}">
+                <input type="text" placeholder="Author"  name="author">
+                <br>
+                <textarea placeholder="Comment"  name="about"></textarea>
+                <br>
+                <button class="btn_send" name="send">Send Comment</button>
+        
+            </form>
+            <ul class="comments">
+                
+             </ul>
+        </li>
+    </template>
+    <!-- Шаблон для Комментариев -->
+    <template id="renderComment">
+        <li>
+            <div class="author_date">
+                <div class="author">
+                 
+                </div>
+                <div class="date">
+                
+                </div>
+            </div>
+     
+            <div class="post_text">
+                <span class="text"></span>
+                <button class="seeMore">See more</button>
+            </div>
+        </li>
+    </template>
+    
+    <script src="script.js"></script>
+</body>
+</html>
